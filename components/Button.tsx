@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 type Props = {
   label: string;
   theme?: "primary";
-  onPress?: () => {};
+  onPress?: () => void;
 };
 
 export default function Button({ label, theme, onPress }: Props) {
@@ -36,7 +36,7 @@ export default function Button({ label, theme, onPress }: Props) {
     <View style={styles.buttonContainer}>
       <Pressable
         style={styles.button}
-        onPress={() => alert("You pressed a button.")}
+        onPress={onPress}
       >
         <Text style={styles.buttonLabel}>{label}</Text>
       </Pressable>
